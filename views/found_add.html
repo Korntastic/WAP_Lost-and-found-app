@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>➕ Add Found Item</title>
+</head>
+<body>
+
+<h2>➕ Add Found Item</h2>
+
+<form action="found_upload.php" method="POST" enctype="multipart/form-data">
+  <label>Item Name (required):</label><br>
+  <input type="text" name="found_item_name" required><br><br>
+
+  <label>Upload Image (required):</label><br>
+  <input type="file" name="image" accept="image/*" required><br><br>
+
+  <label>Found Location (required):</label><br>
+  <input type="text" name="found_location" required><br><br>
+
+  <label>Phone (optional):</label><br>
+  <input type="text" name="found_contact_phone"><br><br>
+
+  <label>Description:</label><br>
+  <textarea name="found_description" rows="4" cols="40"></textarea><br><br>
+
+  <input type="submit" value="Submit">
+</form>
+
+<p><a href="/found_list.php">← Back to List</a></p>
+
+</body>
+</html>

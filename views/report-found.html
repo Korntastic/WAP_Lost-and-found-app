@@ -1,0 +1,83 @@
+
+<section class="report-section">
+  <div class="container">
+    <div class="report-card">
+      <h2>Report a Found Item</h2>
+      <p class="subheading">
+        Provide details about the item you found. Your information will help reunite it with its owner.
+      </p>
+
+      <form action="found_upload.php" method="POST" enctype="multipart/form-data" class="report-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="itemTitle">Item Title</label>
+            <input id="itemTitle" name="found_item_name" type="text" placeholder="e.g., Blue Backpack" required />
+          </div>
+          <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+              <option value="">Select a category</option>
+              <option>Electronics</option>
+              <option>Personal Belongings</option>
+              <option>Keys</option>
+              <option>Bags</option>
+              <option>Pets</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea id="description" name="description" rows="3" placeholder="e.g., Found near the library, contains books and a small planner." required></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="locationFound">Location Found</label>
+            <input id="locationFound" name="found_location" type="text" placeholder="e.g., Main Street Park bench" required />
+          </div>
+          <div class="form-group">
+            <label for="dateFound">Date Found</label>
+            <input id="dateFound" name="found_date" type="date" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="dropoffLocation">Drop-off Location (Optional)</label>
+          <input id="dropoffLocation" name="dropoff_location" type="text" placeholder="e.g., University Lost & Found Office" />
+          <small>If you left the item somewhere safe, please provide details.</small>
+        </div>
+
+        <div class="upload-zone">
+          <label for="itemImage" class="upload-label">
+            <input id="itemImage" name="image" type="file" accept="image/*" required />
+            <p>Drag and drop your image here or click to upload<br />PNG, JPG, GIF up to 5MB</p>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="yourName">Your Name (Optional)</label>
+            <input id="yourName" name="reporter_name" type="text" placeholder="e.g., John Doe" />
+          </div>
+          <div class="form-group">
+            <label for="yourEmail">Your Email (Optional)</label>
+            <input id="yourEmail" name="reporter_email" type="email" placeholder="e.g., john.doe@example.com" />
+          </div>
+        </div>
+
+        <div class="form-group checkbox-group">
+          <label>
+            <input type="checkbox" required />
+            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button type="reset" class="btn btn-secondary">Cancel</button>
+          <button type="submit" class="btn btn-primary">Submit Found Item</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

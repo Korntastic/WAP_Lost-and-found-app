@@ -1,0 +1,67 @@
+<section class="report-section">
+  <div class="container">
+    <div class="report-card">
+      <h2>Report a Lost Item</h2>
+      <p class="subheading">
+        Provide details about your lost item to help us find it.</p>
+          
+      <form action="lost_upload.php" method="POST" enctype="multipart/form-data" class="report-form">
+        <div class="form-group">
+          <label for="itemTitle">Item Title</label>
+          <input id="itemTitle" name="lost_item_name" type="text" placeholder="e.g., Black Leather Wallet" required />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea id="description" name="lost_description" rows="4" placeholder="e.g., Contains ID, bank cards, and a family photo. Scratches on the back." required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select id="category" name="lost_category" required>
+            <option value="">Select a category</option>
+            <option>Electronics</option>
+            <option>Personal Belongings</option>
+            <option>Keys</option>
+            <option>Bags</option>
+            <option>Pets</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="locationLost">Location Lost</label>
+          <input id="locationLost" name="lost_location" type="text" placeholder="e.g., University Library, 3rd Floor" required />
+        </div>
+        <div class="form-group">
+          <label for="dateLost">Date Lost</label>
+          <input id="dateLost" name="date_item_lost" type="date" required />
+        </div>
+
+        <hr />
+
+        <h3>Contact Information</h3>
+        <div class="form-group">
+          <label for="contactInfo">Preferred Contact (Email or Phone)</label>
+          <input id="contactInfo" name="phone" type="text" placeholder="e.g., your@email.com or +1 (555) 123-4567" required />
+        </div>
+
+        <hr />
+
+        <h3>Additional Details</h3>
+        <div class="form-group">
+          <label for="itemImage">Item Image (Optional)</label>
+          <input id="itemImage" name="lost_image" type="file" accept="image/*" />
+        </div>
+        <div class="form-group">
+          <label for="proof">Proof of Ownership (Optional)</label>
+          <textarea id="proof" name="lost_proof" rows="3" placeholder="e.g., Serial number, unique markings, purchase details, or specific content."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="reset" class="btn btn-secondary">Cancel</button>
+          <button type="submit" class="btn btn-primary">Submit Report</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+

@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  
+  <title>➕ Post a Lost Item Request</title>
+</head>
+<body>
+
+<h2>😢 Report a Lost Item</h2>
+
+<form action="lost_upload.php" method="POST" enctype="multipart/form-data">
+    
+
+
+  <label>Item Name (required):</label><br>
+  <input type="text" name="lost_item_name" required><br><br>
+
+  <label>Item Image (optional):</label><br>
+  <input type="file" name="lost_image"><br><br>
+
+  <label>Where You Lost It (required):</label><br>
+  <input type="text" name="lost_location" required><br><br>
+
+  <label>Phone (optional):</label><br>
+  <input type="text" name="lost_contact_phone"><br><br>
+
+  <label>Description (optional):</label><br>
+  <textarea name="lost_description" rows="4" cols="50"></textarea><br><br>
+
+  <input type="submit" value="Submit Lost Request">
+</form>
+
+<p><a href="lost_list.php">← Back to List</a></p>
+
+</body>
+</html>
+
+

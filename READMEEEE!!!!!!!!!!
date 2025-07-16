@@ -1,0 +1,63 @@
+DATABASE:
+when u start to use please make sure u sqldatabase port is same go to see includes/db_connect!
+
+
+// CREATE lost_found_db:
+CREATE DATABASE lost_found_db;
+
+
+
+
+
+users code:
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('user', 'admin') DEFAULT 'user'
+);
+
+(when u add this table if u want to add admin account u can change u role in phpMyAdmin)
+
+
+
+
+lost items code: 
+    CREATE TABLE lost_items (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    lost_item_name VARCHAR(255) NOT NULL,
+    category VARCHAR(100),
+    lost_image_path VARCHAR(255),
+    lost_location VARCHAR(255) NOT NULL,
+    lost_date DATE,
+    dropoff_location VARCHAR(255),
+    lost_contact_phone VARCHAR(50),
+    lost_description TEXT,
+    reporter_name VARCHAR(100),
+    reporter_email VARCHAR(100),
+    lost_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+    found items code 
+    CREATE TABLE found_items (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    found_item_name VARCHAR(255) NOT NULL,
+    category VARCHAR(100),
+    found_image_path VARCHAR(255),
+    found_location VARCHAR(255) NOT NULL,
+    found_date DATE,
+    dropoff_location VARCHAR(255),
+    found_contact_phone VARCHAR(50),
+    found_description TEXT,
+    reporter_name VARCHAR(100),
+    reporter_email VARCHAR(100),
+    found_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);

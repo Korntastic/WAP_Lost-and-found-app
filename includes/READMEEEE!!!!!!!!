@@ -1,0 +1,3 @@
+I separate out the code that I need frequently
+When you need to use it (like a database connection), 
+just copy require_once __DIR__ . '/includes/db_connect.php';
